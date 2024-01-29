@@ -61,3 +61,31 @@ const fizzBuzzSequence = (start, end) => {
     }
   };
 console.log(fizzBuzzSequence(1,10))
+
+
+function median(num){
+  let total=num.sort((a,b)=>a-b)
+
+  let index= Math.floor(total.length/2)
+
+  return num[index]
+}
+
+console.log(median([2, 5, 7, 9, 11, 13, 15]))
+
+
+const twoSum=(nums,target) =>{
+  let useMap=new Map();
+
+  for(let i=0; i<nums.length; i++){
+    let diff=target-nums[i];
+
+    if(useMap.has(diff)){
+      return [useMap.get(diff),i]
+    }
+
+    useMap.set(nums[i],i)
+  }
+}
+
+console.log(twoSum([1,2,3,4],5))
